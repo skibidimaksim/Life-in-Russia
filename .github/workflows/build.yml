@@ -20,7 +20,7 @@ jobs:
           cp "$base/build.gradle" "$base/settings.gradle" "$base/gradle.properties" "$base/gradlew" .
           cp -R "$base/gradle" .
           mkdir -p src/main/resources/META-INF
-          cp "$base/src/main/resources/META-INF/neoforge.mods.toml" src/main/resources/META-INF/neoforge.mods.toml
+          cp -R "$base/src/main/templates" src/main/
           sed -i 's/^mod_id=.*/mod_id=lifeinrussia/; s/^mod_name=.*/mod_name=Life in Russia/; s/^mod_version=.*/mod_version=0.1.0/; s/^mod_group_id=.*/mod_group_id=com.cursedstudios.lifeinrussia/; s/^neo_version=.*/neo_version=21.11.45/' gradle.properties
           chmod +x gradlew
       - name: Create mod source automatically
